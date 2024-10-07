@@ -1,9 +1,9 @@
 class Solution {  
 public:  
     double minimumAverage(std::vector<int>& nums) {  
-        std::sort(nums.begin(), nums.end());  
+        sort(nums.begin(), nums.end());  
         int n = nums.size();  
-        double minAvg = std::numeric_limits<double>::max();  
+        double minAvg = numeric_limits<double>::max();  
 
         for (int i = 0; i < n / 2; ++i) {  
             double average = (nums[i] + nums[n - 1 - i]) / 2.0;  
