@@ -1,21 +1,13 @@
 class Solution {
 public:
-    bool isPalindrome(long long number) {
-     
-        if(number<0){
-            return false;
+    bool isPalindrome(int x) {
+        long temp = 0;
+        long original = x;
+        while(x > 0){
+            long rm = x%10;
+            temp = temp*10 + rm;
+            x/=10;
         }
-        long long reversedNumber = 0, remainder, originalNumber = number;
-     
-        while(number!=0){
-            remainder = number % 10;
-            reversedNumber = reversedNumber * 10 + remainder;
-            number /= 10;
-        }
-
-        if(originalNumber==reversedNumber){
-            return true;
-        }
-        return false;
+        return temp == original;
     }
 };
