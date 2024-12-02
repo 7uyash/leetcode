@@ -1,21 +1,18 @@
 class Solution {
 public:
-int f(int x, vector<int>& nums){
-    int count =0;
-    for(int i = 0; i<x; i++){
-        if(nums[i]==nums[x]){
-            count +=1;
-        }
-    }
-    return count;
-}
     int numIdenticalPairs(vector<int>& nums) {
-        int n= nums.size();
-        int ans=0;
-        for(int x=0; x<n; x++){
-            ans+= f(x, nums);
+        int count = 0;
+        vector<int>num = nums;
+        int s = num.size();
+        for(int i = 0; i<s; i++){
+            int a = num[i];
+            for(int j = i+1; j<s; j++){
+                int b = num[j];
+                if(num[i]==num[j]){
+                    count++;
+                }
+            }
         }
-        return ans;
-
+        return count;
     }
 };
