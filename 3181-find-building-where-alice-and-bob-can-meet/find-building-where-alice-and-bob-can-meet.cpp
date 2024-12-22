@@ -5,7 +5,7 @@ public:
     int ans=heights.size();
     while(l<=h){
         int m=l+(h-l)/2;
-            //cout<<"m= "<<m<<" mv= "<<heights[m]<<" maxi= "<<maxi<<endl;
+           // cout<<"m= "<<m<<" mv= "<<heights[m]<<" maxi= "<<maxi<<endl;
         if(heights[st[m]]>=maxi){
             ans=m;
             l=m+1;
