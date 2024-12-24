@@ -106,7 +106,7 @@ void make_it_correct_BAY(int node,vector<vector<int>>&adj,unordered_map<int,vect
         // }cout<<endl;
         // cout<<"====="<<endl;
 
-         cout<<"mini1= "<<mini1<<" 2= "<<mini2<<" n1= "<<node1<<" 2= "<<node2<<endl;
+         //cout<<"mini1= "<<mini1<<" 2= "<<mini2<<" n1= "<<node1<<" 2= "<<node2<<endl;
         ans=max(ans,ht[node1]+ht[node2]-1);
         return ans;
     }
