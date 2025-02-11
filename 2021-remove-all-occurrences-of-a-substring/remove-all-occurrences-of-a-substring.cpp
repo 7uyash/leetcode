@@ -6,6 +6,6 @@ public:
         {
             s.erase(s.find(part),part.length());
         }
-    return s;
+        return s;
     }
 };
