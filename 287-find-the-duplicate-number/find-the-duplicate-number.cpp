@@ -1,19 +1,19 @@
 class Solution {
 public:
     int findDuplicate(vector<int>& nums) {
-        map<int, int>a;
-        for(int i: nums){
-            a[i]++;
+        int n=nums.size();
+        int left=1,right=n-1,c,mid;
+        while (left<right){
+            mid=(left+right)/2;
+            c=0;
+            for(int i=0;i<n;i++)
+                if(nums[i]<=mid)
+                    c++;
+            if (c>mid)
+                right=mid;
+            else
+                left=mid+1;
         }
-        int ans = 0;
-        for(auto i : a){
-            if(i.second>1){
-                ans = i.first;
-                break;
-            }
-
-
-        }
-        return ans;
+        return left;
     }
 };
