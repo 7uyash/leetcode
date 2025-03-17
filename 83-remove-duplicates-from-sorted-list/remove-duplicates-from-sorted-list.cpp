@@ -8,26 +8,21 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
-
-
 class Solution {
 public:
     ListNode* deleteDuplicates(ListNode* head) {
-      if(!head || !head->next){
-        return head;
-      }
-      ListNode* current = head;
-
-      while(current && current->next){
-        if(current->val == current->next->val){
-            ListNode* temp = current->next;
-            current -> next = current->next->next;
-            delete temp ;
-
-        }else{
-            current = current->next;
+        if(head == NULL || head->next == NULL){
+            return head;
         }
-      }
-      return head;
+        ListNode* temp = head;
+        while(temp && temp-> next){
+            if(temp->val == temp->next->val){
+                temp->next = temp->next->next;
+            }else{
+                temp =  temp->next;
+            }
+        }
+        return head;
+
     }
 };
