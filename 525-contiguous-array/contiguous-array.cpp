@@ -1,20 +1,20 @@
 class Solution {
 public:
     int findMaxLength(vector<int>& nums) {
-        unordered_map<int, int> prefixSumMap;
-        prefixSumMap[0] = -1;
+        unordered_map<int, int> preSumMap;
+        preSumMap[0] = -1;
         
         int maxLength = 0;
-        int prefixSum = 0;
+        int preSum = 0;
         
         for (int i = 0; i < nums.size(); ++i) {
-            prefixSum += (nums[i] == 0) ? -1 : 1;
+            preSum += (nums[i] == 0) ? -1 : 1;
             
-            if (prefixSumMap.find(prefixSum) != prefixSumMap.end()) {
-                int length = i - prefixSumMap[prefixSum];
-                maxLength = std::max(maxLength, length);
+            if (preSumMap.find(preSum) != preSumMap.end()) {
+                int length = i - preSumMap[preSum];
+                maxLength = max(maxLength, length);
             } else {
-                prefixSumMap[prefixSum] = i;
+                preSumMap[preSum] = i;
             }
         }
         
