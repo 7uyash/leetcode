@@ -19,7 +19,6 @@ var myPow = function(num, power) {
     }
 let tp = 1;
 function pow(p, n){
-    console.log(p, n);
     if (p*2 >= Math.floor(power/2)){
         tp = p;
         return n;
@@ -32,13 +31,9 @@ let ans = pow(1, num);
 for (tp; tp < Math.floor(power/2); tp++){
     ans = ans * num;
 }
-console.log(ans);
 if(power%2 === 0){
-    console.log('even');
-    console.log(ans*ans);
     return ans*ans;
 } else {
-    console.log(ans*ans*num);
     return ans*ans*num;
 }
 };
